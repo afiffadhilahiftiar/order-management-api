@@ -17,20 +17,20 @@ func main() {
     // Serve HTML static files (frontend)
     r.Static("/static", "./static")
 
-    // ✅ Public routes (no JWT)
+    // Public routes (no JWT)
     r.POST("/register", controllers.Register)
     r.POST("/login", controllers.Login)
     r.GET("/products", controllers.GetProducts)
 
-    // 🔒 Routes with JWT
+    // Routes with JWT
     auth := r.Group("/")
     auth.Use(middlewares.JWTAuth())
     {
-        // 🛒 Customer order
+        // Customer order
         auth.POST("/orders", controllers.CreateOrder)
         auth.GET("/orders", controllers.GetUserOrders)
 
-        // 🔐 Admin-only routes
+        // Admin-only routes
         admin := auth.Group("/admin")
         admin.Use(middlewares.AdminOnly())
         {
