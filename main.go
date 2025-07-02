@@ -40,5 +40,5 @@ func main() {
         }
     }
 
-    r.Run(":8000") // Jalankan server di port 8888
+    r.Run(":8000") // Jalankan server di port 8000
 }
