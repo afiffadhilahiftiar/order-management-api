@@ -13,8 +13,11 @@ Sistem manajemen pemesanan produk menggunakan Golang (Gin).
 
 🚀 Cara Menjalankan
 1. Buat folder order_management, lalu buka
-2. Inisialisasi Module: go mod init order_management
-3. Install Dependency:
+2. Inisialisasi Module:
+   ```bash
+   go mod init order_management
+   
+4. Install Dependency:
    ```bash
    go get github.com/gin-gonic/gin
    go get gorm.io/gorm
